@@ -1,0 +1,1008 @@
+{
+  "id": "system-default",
+  "name": "系统默认配置",
+  "author": "官方",
+  "description": "初始内置的官方词缀规则配置方案-简中POE1",
+  "version": 1,
+  "rules": [
+    {
+      "type": "datPatch",
+      "name": "物品名称修改",
+      "enabled": true,
+      "datPath": "Data/simplified chinese/BaseItemTypes.datc64",
+      "datName": "基础物品类型",
+      "definitionsPath": "schema.jsonl",
+      "primaryKeyField": "Id",
+      "displayFields": [
+        "Name"
+      ],
+      "updates": [
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyDuplicate",
+          "fields": {
+            "Name": "<efarmVeryDangerous>{[♥♥♥]卡兰德的魔镜}"
+          },
+          "originalValues": {
+            "Name": "卡兰德的魔镜"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyModValues",
+          "fields": {
+            "Name": "<efarmLucky>{[♥]神圣石}"
+          },
+          "originalValues": {
+            "Name": "神圣石"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyDuplicateShard",
+          "fields": {
+            "Name": "<efarmDangerous>{[♥♥]卡兰德的魔镜碎片}"
+          },
+          "originalValues": {
+            "Name": "卡兰德的魔镜碎片"
+          }
+        }
+      ],
+      "remark": ""
+    },
+    {
+      "type": "affix",
+      "name": "地图危险词",
+      "enabled": true,
+      "matchType": "idLine",
+      "matchValues": [
+        {
+          "value": "map_boss_damage_",
+          "remark": "地图首领的伤害总增"
+        },
+        {
+          "value": "all_damage_can_freeze|base_chance_to_freeze_",
+          "remark": "冻结"
+        },
+        {
+          "value": "display_monster_spike_nova_on_death_text",
+          "remark": "死亡时射出尖刺"
+        },
+        {
+          "value": "monster_casts_bleed_nova_text",
+          "remark": "造成流血"
+        },
+        {
+          "value": "volatile_on_death",
+          "remark": "无常之核"
+        },
+        {
+          "value": "base_damage_taken_",
+          "remark": "承受伤害提高"
+        },
+        {
+          "value": "^physical_damage_taken_",
+          "remark": "受到的物理伤害提高"
+        },
+        {
+          "value": "drop_burning_ground|map_base_ground|map_ground|map_tempest_base_ground|map_tempest_ground",
+          "remark": "各类地面"
+        },
+        {
+          "value": "spawn.*exile",
+          "remark": "盗贼流放者"
+        },
+        {
+          "value": "map_player_base_chaos_damage_taken_per_minute",
+          "remark": "玩家每秒承受混沌伤害"
+        },
+        {
+          "value": "map_player_has_level_X_|map_player_has_random_level_X_curse_every_10_seconds",
+          "remark": "玩家受到各类诅咒"
+        },
+        {
+          "value": "map_additional_player_maximum_resistances_",
+          "remark": "玩家的所有抗性上限"
+        },
+        {
+          "value": "map_monsters_life_",
+          "remark": "怪物的生命总增"
+        },
+        {
+          "value": "map_monsters_area_of_effect_",
+          "remark": "怪物效果区域的扩大"
+        },
+        {
+          "value": "map_monsters_critical_strike_chance_",
+          "remark": "怪物暴击率提高"
+        },
+        {
+          "value": "map_monsters_critical_strike_multiplier_",
+          "remark": "怪物暴击伤害加成"
+        },
+        {
+          "value": "map_monsters_damage_",
+          "remark": "怪物伤害提高"
+        },
+        {
+          "value": "map_monsters_have_onslaught",
+          "remark": "地图中怪物带有猛攻"
+        },
+        {
+          "value": "map_monsters_.*_speed_",
+          "remark": "怪物三速"
+        },
+        {
+          "value": "map_monsters_additional_number_of_projecitles",
+          "remark": "怪物可以发射额外投射物"
+        },
+        {
+          "value": "map_monsters_poison_on_hit",
+          "remark": "被怪物击中时中毒"
+        },
+        {
+          "value": "map_monsters_%_physical_damage_to_",
+          "remark": "怪物造成的额外物理伤害转为各类伤害"
+        },
+        {
+          "value": "map_monster_melee_attacks_apply_random_curses",
+          "remark": "怪物的近战攻击击中时施加随机魔蛊"
+        },
+        {
+          "value": "map_monsters_reflect_curses|map_players_and_monsters_curses_are_reflected",
+          "remark": "怪物反射魔蛊"
+        },
+        {
+          "value": "map_monsters_drop_ground_fire_on_death_base_radius",
+          "remark": "怪物死亡后会造成燃烧地面"
+        },
+        {
+          "value": "map_boss_attack_and_cast_speed_",
+          "remark": "传奇首领的攻击速度及施法速度加快"
+        },
+        {
+          "value": "map_boss_maximum_life_",
+          "remark": "传奇首领的生命提高"
+        },
+        {
+          "value": "map_boss_area_of_effect_",
+          "remark": "传奇首领的效果区域扩大"
+        },
+        {
+          "value": "map_ambush_chests",
+          "remark": "保险箱会有伏击的怪物守卫着"
+        },
+        {
+          "value": "display_map_has_oxygen",
+          "remark": "区域在一段时间后变为致命"
+        },
+        {
+          "value": "chaos_damage_per_minute_while_affected_by_flask",
+          "remark": "在任意药剂生效期间每秒承受混沌伤害"
+        },
+        {
+          "value": "consecrated_ground_on_death",
+          "remark": "死亡时创造奉献地面"
+        },
+        {
+          "value": "create_enemy_meteor_daemon_on_flask_use_",
+          "remark": "使用药剂时被流星锁定"
+        },
+        {
+          "value": "curses_reflected_to_self",
+          "remark": "你施加的诅咒会反射给你"
+        },
+        {
+          "value": "map_monsters_petrification_for_X_seconds_on_hit",
+          "remark": "石化"
+        },
+        {
+          "value": "map_boss_is_possessed",
+          "remark": "传奇首领被附身"
+        },
+        {
+          "value": "map_monsters_chance_to_impale_",
+          "remark": "怪物的攻击击中造成穿刺"
+        },
+        {
+          "value": "map_monsters_always_ignite",
+          "remark": "怪物的所有伤害必定点燃"
+        },
+        {
+          "value": "map_monsters_maximum_life_",
+          "remark": "怪物将生命转化为额外能量护盾上限"
+        },
+        {
+          "value": "map_monsters_penetrate_elemental_resistances_",
+          "remark": "怪物的伤害穿透元素抗性"
+        },
+        {
+          "value": "map_players_and_monsters_damage_taken_",
+          "remark": "玩家和怪物受到的伤害提高"
+        },
+        {
+          "value": "map_players_are_poisoned_while_moving_chaos_damage_per_second",
+          "remark": "玩家移动时会中毒"
+        },
+        {
+          "value": "map_players_resist_all_",
+          "remark": "玩家的全抗性"
+        },
+        {
+          "value": "map_supporter_players_sent_to_void_league_on_death",
+          "remark": "在区域内被击败的玩家会进入虚空"
+        },
+        {
+          "value": "map_uber_drowning_orb_ambush",
+          "remark": "区域内有淹没法球"
+        },
+        {
+          "value": "map_uber_map_player_damage_cycle",
+          "remark": "每 10 秒中，玩家及其召唤生物有 3 秒不能造成伤害"
+        },
+        {
+          "value": "non_damaging_ailments_reflected_to_self",
+          "remark": "你施加的非伤害型异常状态会反射给你"
+        },
+        {
+          "value": "hits_ignore_enemy_monster_physical_damage_reduction_",
+          "remark": "怪物的击中有 {0}% 的几率忽略物理伤害减免"
+        },
+        {
+          "value": "map_ground_consecrated",
+          "remark": "你的地图中出现奉献地面"
+        },
+        {
+          "value": "all_damage_can_ignite",
+          "remark": "怪物的所有击中伤害造成点燃状态"
+        },
+        {
+          "value": "always_crit",
+          "remark": "怪物击中始终为暴击"
+        },
+        {
+          "value": "base_avoid_ignite_|map_monsters_avoid_ignite_",
+          "remark": "怪物有几率避免被点燃"
+        },
+        {
+          "value": "cannot_have_life_leeched_from",
+          "remark": "伤害不能偷取怪物的生命"
+        },
+        {
+          "value": "cannot_have_mana_leeched_from",
+          "remark": "伤害不能偷取怪物的魔力"
+        },
+        {
+          "value": "global_always_hit",
+          "remark": "无法闪避怪物的击中"
+        },
+        {
+          "value": "immune_to_curses|map_monsters_are_immune_to_curses|map_monsters_are_hexproof",
+          "remark": "怪物免疫诅咒"
+        },
+        {
+          "value": "kill_enemy_on_hit_if_under_",
+          "remark": "怪物击中生命低于 20% 以下的生物造成致命一击"
+        },
+        {
+          "value": "monster_grants_no_flask_charges",
+          "remark": "消灭怪物不能获得药剂充能"
+        },
+        {
+          "value": "never_take_critical_strike",
+          "remark": "击中怪物不能造成暴击"
+        },
+        {
+          "value": "_of_current_energy_shield_on_hit",
+          "remark": "怪物击中时移除当前能量护盾"
+        },
+        {
+          "value": "_of_current_mana_on_hit",
+          "remark": "怪物击中时移除当前魔力"
+        },
+        {
+          "value": "immune_to_curses|hexproof",
+          "remark": "免疫诅咒"
+        },
+        {
+          "value": "cannot_have_life_leeched_from",
+          "remark": "无法被吸血"
+        },
+        {
+          "value": "map_player_no_regeneration",
+          "remark": "玩家无法再生生命或魔力"
+        },
+        {
+          "value": "map_monsters_avoid_ailments_",
+          "remark": "怪物有几率避免异常状态"
+        },
+        {
+          "value": "map_monsters_avoid_elemental_ailments_",
+          "remark": "怪物有几率避免元素异常状态"
+        },
+        {
+          "value": "map_monsters_cannot_be_leeched_from",
+          "remark": "怪物无法被偷取"
+        },
+        {
+          "value": "map_monsters_reflect_%_physical_damage",
+          "remark": "怪物会反射物理伤害"
+        },
+        {
+          "value": "map_monsters_reflect_%_elemental_damage",
+          "remark": "怪物会反射元素伤害"
+        },
+        {
+          "value": "map_monsters_cannot_be_stunned",
+          "remark": "怪物免疫晕眩"
+        },
+        {
+          "value": "map_monster_skills_chain_X_additional_times",
+          "remark": "怪物的技能附加 {0} 次连锁弹射"
+        },
+        {
+          "value": "add_x_grasping_vines_on_hit",
+          "remark": "击中时施加 {0} 个缓速蔓藤"
+        },
+        {
+          "value": "display_altar_chaos_aura",
+          "remark": "周围敌人获得额外混沌伤害，等于物理伤害的{0}%"
+        },
+        {
+          "value": "drain_x_flask_charges_over_time_on_hit_for_6_seconds",
+          "remark": "敌人每 3 秒失去 {0} 次药剂充能，被击中后 6 秒内不能获得药剂充能"
+        },
+        {
+          "value": "map_ground_consecrated_life_regeneration_rate_per_minute_",
+          "remark": "区域中出现奉献地面"
+        },
+        {
+          "value": "map_monsters_avoid_poison_bleed_impale_",
+          "remark": "怪物有几率避免中毒、穿刺、流血"
+        },
+        {
+          "value": "map_monsters_spell_suppression_chance_",
+          "remark": "怪物有几率压制法术伤害"
+        },
+        {
+          "value": "map_player_buff_time_passed_",
+          "remark": "玩家身上的增益效果消减速度加快"
+        },
+        {
+          "value": "map_players_cannot_gain_",
+          "remark": "玩家无法获得球球"
+        },
+        {
+          "value": "map_players_no_regeneration_including_es",
+          "remark": "玩家无法再生生命，魔力和能量护盾"
+        },
+        {
+          "value": "random_projectile_direction",
+          "remark": "投射物朝随机方向发射"
+        }
+      ],
+      "textFix": {
+        "prefix": "",
+        "suffix": ""
+      },
+      "colorMode": "line",
+      "colorId": "efarmVeryDangerous",
+      "remark": ""
+    },
+    {
+      "type": "affix",
+      "name": "地图风险词",
+      "enabled": true,
+      "matchType": "idLine",
+      "matchValues": [
+        {
+          "value": "map_spawn_affliction_mirror",
+          "remark": "地图中有一个惊悸迷雾之镜"
+        },
+        {
+          "value": "map_spawn_two_bosses",
+          "remark": "区域内有两个传奇首领"
+        },
+        {
+          "value": "map_beyond_rules",
+          "remark": "击败敌人将会吸引更强大的怪物登场"
+        },
+        {
+          "value": "map_num_extra_abysses",
+          "remark": "该地图会出现额外深渊"
+        },
+        {
+          "value": "map_dropped_maps_are_corrupted_with_8_mods",
+          "remark": "地图内发现的地图被 8 个词缀腐化"
+        },
+        {
+          "value": "map_duplicate_captured_beasts_chance_",
+          "remark": "几率复制一头地图中被捕捉的魔物"
+        },
+        {
+          "value": "map_number_of_rare_packs_",
+          "remark": "稀有怪物数量提高"
+        },
+        {
+          "value": "map_pack_size_",
+          "remark": "怪物群规模扩大"
+        },
+        {
+          "value": "expedition_twinned_elites",
+          "remark": "复制符纹怪物"
+        }
+      ],
+      "textFix": {
+        "prefix": "",
+        "suffix": ""
+      },
+      "colorMode": "line",
+      "colorId": "efarmDangerous",
+      "remark": ""
+    },
+    {
+      "type": "affix",
+      "name": "保险箱危险词",
+      "enabled": true,
+      "matchType": "idLine",
+      "matchValues": [
+        {
+          "value": "chest_display_ice_nova",
+          "remark": "施放冰霜新星"
+        },
+        {
+          "value": "chest_display_freeze",
+          "remark": "开启后将你冰冻"
+        },
+        {
+          "value": "chest_spawn_rogue_exiles",
+          "remark": "盗贼流放者守护"
+        },
+        {
+          "value": "chest_display_explodes_corpses",
+          "remark": "引爆附近的灵柩"
+        },
+        {
+          "value": "chest_display_cast_random_curse",
+          "remark": "启动时施放一种随机魔蛊"
+        },
+        {
+          "value": "chest_display_ignite",
+          "remark": "开启后将你点燃"
+        },
+        {
+          "value": "chest_display_caustic_clouds",
+          "remark": "释放腐蚀地面"
+        },
+        {
+          "value": "chest_display_explosion",
+          "remark": "爆炸"
+        }
+      ],
+      "textFix": {
+        "prefix": "",
+        "suffix": ""
+      },
+      "colorMode": "line",
+      "colorId": "efarmVeryDangerous",
+      "remark": ""
+    },
+    {
+      "type": "affix",
+      "name": "黄金港危险词",
+      "enabled": true,
+      "matchType": "idLine",
+      "matchValues": [
+        {
+          "value": "heist_alert_level_gained_per_10_sec",
+          "remark": "警报等级每秒提高"
+        },
+        {
+          "value": "heist_lockdown_is_instant",
+          "remark": "警报等级一满便立刻触发封锁"
+        },
+        {
+          "value": "heist_player_additional_maximum_resistances_",
+          "remark": "警报等级使玩家的抗性上限"
+        },
+        {
+          "value": "heist_player_fire_resistance_",
+          "remark": "警报等级使玩家的火焰抗性"
+        }
+      ],
+      "textFix": {
+        "prefix": "",
+        "suffix": ""
+      },
+      "colorMode": "line",
+      "colorId": "efarmVeryDangerous",
+      "remark": ""
+    },
+    {
+      "type": "affix",
+      "name": "地图爽词",
+      "enabled": true,
+      "matchType": "idLine",
+      "matchValues": [
+        {
+          "value": "map_on_complete_drop_additional_",
+          "remark": "完成你的地图时额外掉落一个特殊图"
+        },
+        {
+          "value": "map_boss_dropped_unique_items_",
+          "remark": "地图首领额外掉落一件传奇物品"
+        },
+        {
+          "value": "map_boss_drops_additional_currency_items",
+          "remark": "每张地图的最终地图首领掉落一个额外的基础通货物品"
+        },
+        {
+          "value": "chest_item_quantity_",
+          "remark": "箱内含物品的数量提高"
+        },
+        {
+          "value": "chest_item_rarity_",
+          "remark": "箱内含物品的稀有度提高"
+        },
+        {
+          "value": "chest_drop_additional_unqiue_items|chest_drop_additional_unique_maps|chest_drop_additional_number_of_uniques_of_drop_pool_types",
+          "remark": "箱内含 1 个额外的传奇物品"
+        },
+        {
+          "value": "chest_drop_additional_normal_items_up_to",
+          "remark": "箱内含额外物品"
+        },
+        {
+          "value": "dropped_items_are_fully_linked",
+          "remark": "内含物品的所有插槽已全部连接"
+        },
+        {
+          "value": "map_item_drop_quantity_",
+          "remark": "该区域物品掉落数量提高"
+        },
+        {
+          "value": "map_item_drop_rarity_",
+          "remark": "该地图的物品稀有度提高"
+        },
+        {
+          "value": "modifiers_to_map_item_drop_quantity_also_apply_to_map_item_drop_rarity",
+          "remark": "该区域的物品数量加成也套用于物品稀有度"
+        },
+        {
+          "value": "map_display_unique_boss_drops_X_maps",
+          "remark": "传奇首领掉落额外地图"
+        },
+        {
+          "value": "map_num_extra_strongboxes",
+          "remark": "区域内有一个额外的保险箱"
+        },
+        {
+          "value": "_to_drop_additional_currency",
+          "remark": "几率掉落一个额外的基础通货"
+        },
+        {
+          "value": "drops_as_divine_",
+          "remark": "掉落变为神圣石"
+        },
+        {
+          "value": "map_boss_dropped_item_quantity_",
+          "remark": "传奇首领的物品掉落数量提高"
+        },
+        {
+          "value": "map_boss_dropped_unique_items_",
+          "remark": "传奇首领会掉落额外传奇物品"
+        },
+        {
+          "value": "dropped_items_are_fully_linked",
+          "remark": "内含物品的所有插槽已全部连接"
+        },
+        {
+          "value": "_chance_to_duplicate_dropped_currency",
+          "remark": "消灭敌人掉落的基础通货物品有几率会复制"
+        },
+        {
+          "value": "_chance_to_duplicate_dropped_uniques",
+          "remark": "传奇物品有几率会复制"
+        },
+        {
+          "value": "_chance_to_duplicate_dropped_divination_cards",
+          "remark": "消灭敌人掉落的命运卡有几率复制"
+        },
+        {
+          "value": "_chance_to_duplicate_dropped_maps",
+          "remark": "消灭敌人掉落的地图有几率会复制"
+        },
+        {
+          "value": "heist_side_reward_room_monsters_",
+          "remark": "奖励室的怪物增加"
+        },
+        {
+          "value": "map_players_cannot_take_reflected_damage",
+          "remark": "玩家和他们的召唤生物不会受到反射伤害"
+        },
+        {
+          "value": "remove_chill_and_freeze_on_flask_use",
+          "remark": "使用药剂时移除冰缓和冰冻状态"
+        },
+        {
+          "value": "remove_ignite_and_burning_on_flask_use",
+          "remark": "使用药剂时移除点燃和燃烧状态"
+        },
+        {
+          "value": "remove_shock_on_flask_use",
+          "remark": "使用药剂时移除感电状态"
+        },
+        {
+          "value": "map_currency_divine_stack_4_permillage_chance",
+          "remark": "你的地图中掉落的神圣石有{0}%的几率改为堆叠的4个神圣石"
+        },
+        {
+          "value": "map_regret_to_divine_",
+          "remark": "在你的地图中，后悔石有{0}%的几率改为掉落神圣石"
+        },
+        {
+          "value": "map_boss_additional_",
+          "remark": "最终首领掉落额外的东西"
+        },
+        {
+          "value": "_chance_to_duplicate_dropped_scarabs",
+          "remark": "消灭敌人掉落的圣甲虫几率会复制"
+        },
+        {
+          "value": "chance_%_to_drop_additional_",
+          "remark": "几率掉落一个额外的好东西"
+        },
+        {
+          "value": "map_harvest_double_lifeforce_dropped",
+          "remark": "你的地图中的古灵庄园怪物掉落的命能被复制"
+        },
+        {
+          "value": "map_number_of_magic_packs_",
+          "remark": "魔法怪物数量提高"
+        }
+      ],
+      "textFix": {
+        "prefix": "",
+        "suffix": ""
+      },
+      "colorMode": "line",
+      "colorId": "efarmVeryLucky",
+      "remark": ""
+    },
+    {
+      "type": "affix",
+      "name": "炸坟爽词",
+      "enabled": true,
+      "matchType": "idLine",
+      "matchValues": [
+        {
+          "value": "expedition_chest_logbook_chance_",
+          "remark": "发掘的箱子里获取先祖秘藏日志的数量提高"
+        },
+        {
+          "value": "expedition_monsters_currency_drop_quantity_",
+          "remark": "怪物掉落的神器数量提高"
+        },
+        {
+          "value": "expedition_chest_currency_drop_quantity_",
+          "remark": "发掘的箱子里获取神器的数量提高"
+        },
+        {
+          "value": "expedition_monsters_logbook_chance_",
+          "remark": "符纹怪物掉落的先祖秘藏日志数量提高"
+        },
+        {
+          "value": "_to_drop_vendorcurrencyfaction4",
+          "remark": "符纹怪物有 {0}% 的几率掉落额外的烈日神器"
+        },
+        {
+          "value": "expedition_elite_%_to_drop_",
+          "remark": "符纹怪物有几率掉落好东西"
+        }
+      ],
+      "textFix": {
+        "prefix": "",
+        "suffix": ""
+      },
+      "colorMode": "line",
+      "colorId": "efarmVeryLucky",
+      "remark": ""
+    },
+    {
+      "type": "affix",
+      "name": "通货",
+      "enabled": true,
+      "matchType": "text",
+      "matchValues": [
+        {
+          "value": "神圣石",
+          "remark": ""
+        }
+      ],
+      "textFix": {
+        "prefix": "",
+        "suffix": ""
+      },
+      "colorMode": "match",
+      "colorId": "efarmLucky",
+      "remark": ""
+    },
+    {
+      "type": "datPatch",
+      "name": "精华",
+      "enabled": true,
+      "datPath": "Data/simplified chinese/BaseItemTypes.datc64",
+      "datName": "基础物品类型",
+      "definitionsPath": "schema.jsonl",
+      "primaryKeyField": "Id",
+      "displayFields": [
+        "Name"
+      ],
+      "updates": [
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceHatred6",
+          "fields": {
+            "Name": "[升]憎恨之尖啸精华"
+          },
+          "originalValues": {
+            "Name": "憎恨之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceWoe6",
+          "fields": {
+            "Name": "<efarmVeryLucky>{[升]悲痛之尖啸精华}"
+          },
+          "originalValues": {
+            "Name": "悲痛之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceGreed6",
+          "fields": {
+            "Name": "[升]贪婪之尖啸精华"
+          },
+          "originalValues": {
+            "Name": "贪婪之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceContempt6",
+          "fields": {
+            "Name": "<efarmVeryLucky>{[升]轻视之尖啸精华}"
+          },
+          "originalValues": {
+            "Name": "轻视之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceSorrow5",
+          "fields": {
+            "Name": "[升]哀惜之尖啸精华"
+          },
+          "originalValues": {
+            "Name": "哀惜之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceAnger5",
+          "fields": {
+            "Name": "[升]愤怒之尖啸精华"
+          },
+          "originalValues": {
+            "Name": "愤怒之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceTorment5",
+          "fields": {
+            "Name": "[升]折磨之尖啸精华"
+          },
+          "originalValues": {
+            "Name": "折磨之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceFear5",
+          "fields": {
+            "Name": "[升]恐惧之尖啸精华"
+          },
+          "originalValues": {
+            "Name": "恐惧之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceSuffering4",
+          "fields": {
+            "Name": "[升]苦难之尖啸精华"
+          },
+          "originalValues": {
+            "Name": "苦难之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceRage4",
+          "fields": {
+            "Name": "<efarmVeryLucky>{[升]肆虐之尖啸精华}"
+          },
+          "originalValues": {
+            "Name": "肆虐之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceWrath4",
+          "fields": {
+            "Name": "[升]雷霆之尖啸精华"
+          },
+          "originalValues": {
+            "Name": "雷霆之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceDoubt4",
+          "fields": {
+            "Name": "[升]疑惑之尖啸精华"
+          },
+          "originalValues": {
+            "Name": "疑惑之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceAnguish3",
+          "fields": {
+            "Name": "[升]煎熬之尖啸精华"
+          },
+          "originalValues": {
+            "Name": "煎熬之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceLoathing3",
+          "fields": {
+            "Name": "<efarmVeryLucky>{[升]厌恶之尖啸精华}"
+          },
+          "originalValues": {
+            "Name": "厌恶之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceSpite3",
+          "fields": {
+            "Name": "<efarmVeryLucky>{[升]刻毒之尖啸精华}"
+          },
+          "originalValues": {
+            "Name": "刻毒之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceZeal3",
+          "fields": {
+            "Name": "<efarmVeryLucky>{[升]热情之尖啸精华}"
+          },
+          "originalValues": {
+            "Name": "热情之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceMisery2",
+          "fields": {
+            "Name": "[升]凄惨之尖啸精华"
+          },
+          "originalValues": {
+            "Name": "凄惨之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceMisery3",
+          "fields": {
+            "Name": "[瓦]凄惨之破空精华"
+          },
+          "originalValues": {
+            "Name": "凄惨之破空精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceDread2",
+          "fields": {
+            "Name": "[升]忌惮之尖啸精华"
+          },
+          "originalValues": {
+            "Name": "忌惮之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceDread3",
+          "fields": {
+            "Name": "<efarmDangerous>{[瓦]忌惮之破空精华}"
+          },
+          "originalValues": {
+            "Name": "忌惮之破空精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceScorn2",
+          "fields": {
+            "Name": "<efarmVeryLucky>{[升]傲视之尖啸精华}"
+          },
+          "originalValues": {
+            "Name": "傲视之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceScorn3",
+          "fields": {
+            "Name": "<efarmDangerous>{[瓦]傲视之破空精华}"
+          },
+          "originalValues": {
+            "Name": "傲视之破空精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceEnvy2",
+          "fields": {
+            "Name": "<efarmVeryLucky>{[升]忌妒之尖啸精华}"
+          },
+          "originalValues": {
+            "Name": "忌妒之尖啸精华"
+          }
+        },
+        {
+          "whereField": "Id",
+          "whereValue": "Metadata/Items/Currency/CurrencyEssenceEnvy3",
+          "fields": {
+            "Name": "<efarmDangerous>{[瓦]忌妒之破空精华}"
+          },
+          "originalValues": {
+            "Name": "忌妒之破空精华"
+          }
+        }
+      ],
+      "remark": ""
+    }
+  ],
+  "essentialColours": [
+    {
+      "id": "efarmVeryDangerous",
+      "rgbText": "255,30,30",
+      "displayName": "非常危险"
+    },
+    {
+      "id": "efarmDangerous",
+      "rgbText": "255,140,0",
+      "displayName": "危险"
+    },
+    {
+      "id": "efarmVeryLucky",
+      "rgbText": "180,50,255",
+      "displayName": "非常幸运"
+    },
+    {
+      "id": "efarmLucky",
+      "rgbText": "0,255,180",
+      "displayName": "幸运"
+    }
+  ]
+}
